@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Vision___CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landingpage" translatesAutoresizingMaskIntoConstraints="NO" id="ikj-rf-AXs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="a6Z-mw-Jcs" appends="YES" id="6Oo-nH-mhe"/>
+                                    <outletCollection property="gestureRecognizers" destination="11Q-RB-XLb" appends="YES" id="UiG-HK-MYY"/>
+                                    <outletCollection property="gestureRecognizers" destination="x1N-7S-j6W" appends="YES" id="hGU-lv-Jw4"/>
+                                </connections>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" semanticContentAttribute="playback" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F7f-ZV-5pr" userLabel="Prediction View">
+                                <rect key="frame" x="113" y="780" width="188" height="60.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Predictions go here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmt-pk-Cvs" userLabel="Prediction Label">
+                                        <rect key="frame" x="20" y="20" width="148" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="zmt-pk-Cvs" firstAttribute="top" secondItem="F7f-ZV-5pr" secondAttribute="top" constant="20" symbolic="YES" id="3XH-QR-rmF"/>
+                                    <constraint firstAttribute="trailing" secondItem="zmt-pk-Cvs" secondAttribute="trailing" constant="20" symbolic="YES" id="aQY-s2-Nit"/>
+                                    <constraint firstAttribute="bottom" secondItem="zmt-pk-Cvs" secondAttribute="bottom" constant="20" symbolic="YES" id="elu-EU-vKu"/>
+                                    <constraint firstItem="zmt-pk-Cvs" firstAttribute="leading" secondItem="F7f-ZV-5pr" secondAttribute="leading" constant="20" symbolic="YES" id="zLQ-WG-ZNl"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Ff1-e9-ozN" userLabel="Startup Prompts">
+                                <rect key="frame" x="38" y="405" width="356" height="87.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gj5-Ut-Web"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ikj-rf-AXs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3G0-yM-dzu"/>
+                            <constraint firstItem="ikj-rf-AXs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AJE-Qi-8w8"/>
+                            <constraint firstItem="ikj-rf-AXs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="FWZ-Ms-fbs"/>
+                            <constraint firstItem="F7f-ZV-5pr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Z2m-nh-7uJ"/>
+                            <constraint firstItem="F7f-ZV-5pr" firstAttribute="bottom" secondItem="ikj-rf-AXs" secondAttribute="bottom" constant="-40" id="dXL-6o-0EU"/>
+                            <constraint firstItem="ikj-rf-AXs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="f8c-T6-koD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ikj-rf-AXs" id="MjC-cW-qE8"/>
+                        <outlet property="predictionLabel" destination="zmt-pk-Cvs" id="Icz-Lh-paq"/>
+                        <outlet property="startupPrompts" destination="Ff1-e9-ozN" id="UOi-yZ-jzV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.59999999999999998" id="a6Z-mw-Jcs">
+                    <connections>
+                        <action selector="longPress" destination="BYZ-38-t0r" id="tcw-hB-Ubp"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pinchGestureRecognizer id="11Q-RB-XLb">
+                    <connections>
+                        <action selector="pinch" destination="BYZ-38-t0r" id="5JH-xW-EzC"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <tapGestureRecognizer numberOfTouchesRequired="2" id="x1N-7S-j6W" userLabel="Two-Finger Single Tap Recognizer">
+                    <connections>
+                        <action selector="twoFingerSingleTap" destination="BYZ-38-t0r" id="nTe-Rg-zI0"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="139.13043478260872" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="landingpage" width="585" height="1148"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
